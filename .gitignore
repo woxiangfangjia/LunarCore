@@ -59,7 +59,7 @@ tmp/
 .directory
 
 # Lunar Core generated/resource/log/plugins folders
-/resources
+#/resources
 /logs
 /proto
 /plugins
