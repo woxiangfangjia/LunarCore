@@ -1,0 +1,9 @@
+{
+    "name": "Java Development",
+    "image": "mcr.microsoft.com/devcontainers/java:17",
+    "settings": {
+      "java.home": "/usr/local/sdkman/candidates/java/current"
+    },
+    "postCreateCommand": "java -version"
+  }
+  
