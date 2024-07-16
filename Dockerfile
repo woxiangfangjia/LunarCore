@@ -1,16 +1,17 @@
+# 使用官方的 OpenJDK 17 镜像作为基础镜像
 FROM openjdk:17-jdk-slim
 
 # 设置工作目录
 WORKDIR /app
 
-# 复制项目文件到镜像中
-COPY . .
+# 复制 resources 文件夹到容器中
+COPY resources /app/resources
 
-# 修改gradlew脚本的权限，使其可执行
-RUN chmod +x ./gradlew
+# 复制编译好的 JAR 文件到容器中
+COPY LunarCore.jar /app/LunarCore.jar
 
-# 运行gradlew构建jar文件
-RUN ./gradlew jar
+# 暴露应用运行的端口（如果需要）
+EXPOSE 8080
 
-# 设置容器启动时执行的命令
-ENTRYPOINT ["java", "-jar", "build/libs/LunarCore.jar"]
+# 设置容器启动时的命令
+CMD ["java", "-jar", "/app/LunarCore.jar"]
