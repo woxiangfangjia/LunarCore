@@ -65,8 +65,8 @@ tmp/
 /plugins
 
 # Lunar Core compiled
-/*.jar
-/*.sh
+#/*.jar
+#/*.sh
 
 # Lunar Core extra
 Lunar Core Handbook.txt
